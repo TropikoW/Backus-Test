@@ -1,20 +1,23 @@
+import { TestBed } from "@angular/core/testing";
 import { ValueService } from "./value.service";
 
 describe('This test is for the value service',()=>{
+  // Load the service, and some values for some test
   let service = new ValueService;
   let pastValue;
   let newValue;
 
+  // I let angular run the service for each test
   beforeEach(()=>{
     service = new ValueService;
   })
 
-  describe('Test for load',()=>{
+  describe('Test for load the service',()=>{
     it('It should return true',()=>{
       expect(service).toBeTruthy();
     })
   })
-  describe('It for getValue',()=>{
+  describe('Its for getValue',()=>{
     it('It should return a string #Ronaldo',()=>{
       expect(service.getValue()).toBe('Ronaldo');
     })

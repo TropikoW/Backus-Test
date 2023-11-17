@@ -28,12 +28,14 @@ describe('',()=>{
   })
   it('its five try test',()=>{
     let valueServiceSpy = jasmine.createSpyObj('ValueService',['getValue']);
-    valueServiceSpy.getValue.and.returnValue('Ronaldo')
+    let masterService = new MasterService(valueServiceSpy);
+    masterService.getValue();
     expect(valueServiceSpy.getValue).toHaveBeenCalled();
   })
   it('its six try test',()=>{
     let valueServiceSpy = jasmine.createSpyObj('ValueService',['getValue']);
-    valueServiceSpy.getValue.and.returnValue('Ronaldo')
+    let masterService = new MasterService(valueServiceSpy);
+    masterService.getValue();
     expect(valueServiceSpy.getValue).toHaveBeenCalledTimes(1);
   })
 })
